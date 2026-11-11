@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="京都の空き家所有者と使い手を、物件条件と活用プランでつなぐ政策提案デモ。">
+  <title>京の空き家つなぎ｜政策提案デモ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <div class="wrap header-content">
+      <a class="brand" href="#main" aria-label="京の空き家つなぎ トップ">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>京の空き家つなぎ</span>
+      </a>
+      <nav class="main-nav" aria-label="メインメニュー">
+        <a href="#explore" data-view="home">空き家を探す</a>
+        <a href="#explore" data-view="plan">活用プランを見る</a>
+        <a href="#how">活用までの流れ</a>
+      </nav>
+      <button class="button button-outline header-button" type="button" data-action="choose">
+        登録する <span aria-hidden="true">＋</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span aria-hidden="true"></span>京都市の空き家活用 · 政策提案デモ</p>
+        <h1 id="hero-title">京都の空き家を、<br><em>次の使い手へ。</em></h1>
+        <p class="hero-description">
+          所有者が登録した物件の条件と、使い手の活用プランを照らし合わせ、
+          空き家を住まいや店舗として使い始めるまでを支えます。
+        </p>
+        <div class="hero-actions">
+          <button class="button button-primary" type="button" data-action="sample">
+            サンプルで試す <span aria-hidden="true">→</span>
+          </button>
+          <a class="text-link" href="#explore" data-view="home">
+            物件を見る <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/hero.webp" width="1200" height="800" alt="京都の細い路地に並ぶ木造の町家と植木のイメージ">
+        <figcaption>京都・西陣の町並み <span>／ イメージ</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap consultation" aria-labelledby="consultation-title">
+      <div class="consultation-panel">
+        <div>
+          <h2 id="consultation-title">空き家の使い道や進め方に迷ったら</h2>
+          <p>貸すか、売るか、自分で使うか。活用の選び方や最初の手順を、京都市の空き家相談窓口に相談できます。</p>
+        </div>
+        <div class="consultation-actions">
+          <a class="button button-outline" id="city-consultation-guide" href="https://akiya.city.kyoto.lg.jp/support/" target="_blank" rel="noopener">
+            京都市の相談案内を見る <span aria-hidden="true">↗</span>
+          </a>
+          <a class="text-link consultation-phone" href="tel:0752312323">電話 075-231-2323</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="inventory" id="explore" aria-labelledby="inventory-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <h2 id="inventory-title">掲載物件</h2>
+            <p id="inventory-description">使い方や改修について、所有者の希望を確認できます。</p>
+          </div>
+          <div class="view-switch" role="group" aria-label="表示する情報">
+            <button type="button" data-view="home" aria-pressed="true">物件</button>
+            <button type="button" data-view="plan" aria-pressed="false">活用プラン</button>
+          </div>
+        </div>
+
+        <div class="inventory-controls">
+          <div class="deal-filters" role="group" aria-label="契約種別で絞り込む">
+            <button type="button" data-deal="all" aria-pressed="true">すべて</button>
+            <button type="button" data-deal="賃貸" aria-pressed="false">賃貸</button>
+            <button type="button" data-deal="売買" aria-pressed="false">売買</button>
+          </div>
+          <div class="select-filters">
+            <label>
+              <span class="sr-only">エリアで絞り込む</span>
+              <select id="area-filter">
+                <option value="all">すべてのエリア</option>
+              </select>
+            </label>
+            <label>
+              <span class="sr-only">用途で絞り込む</span>
+              <select id="use-filter">
+                <option value="all">すべての用途</option>
+              </select>
+            </label>
+          </div>
+          <p class="results-count" id="results-count" role="status"></p>
+        </div>
+        <div class="card-grid" id="results"></div>
+        <noscript><p>ブラウザで JavaScript を有効にするとデモを操作できます。</p></noscript>
+      </div>
+    </section>
+
+    <section class="wrap how" id="how" aria-labelledby="how-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="how-title">活用までの流れ</h2>
+          <p>物件とプランを登録し、双方で条件を確認してから利用に進みます。</p>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><span class="step-number" aria-hidden="true">01</span><h3>条件を登録</h3><p>所有者は物件の状態と希望を、使い手はやりたいこととその背景、予算を登録します。</p></li>
+        <li><span class="step-number" aria-hidden="true">02</span><h3>候補を確認</h3><p>条件が合う候補を表示します。相手の希望や活用プランを読み、面談を検討します。</p></li>
+        <li><span class="step-number" aria-hidden="true">03</span><h3>内見・条件確認</h3><p>双方の意向が合えば、専門家と建物の状態や権利関係、改修費の分担を確認します。</p></li>
+        <li><span class="step-number" aria-hidden="true">04</span><h3>契約・利用開始</h3><p>売買や賃貸の条件を合意し、必要な改修を行ってから利用を始めます。</p></li>
+      </ol>
+      <aside class="policy-note">
+        <strong>市の相談窓口との連携案</strong>
+        <p>空き家税の周知などをきっかけに市へ相談した所有者にも、希望に応じて本事業を案内する想定です。</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-content">
+      <div>
+        <p class="footer-title">京の空き家つなぎ</p>
+        <p>政策提案デモ。写真は生成イメージ、掲載情報は架空です。入力はブラウザ内で扱います。</p>
+        <p>掲載形式の参考 <a href="https://sakasama-fudosan.com/publishers" target="_blank" rel="noopener">さかさま不動産</a></p>
+      </div>
+      <button class="text-link" type="button" data-action="reset">デモを初期化</button>
+    </div>
+  </footer>
+
+  <dialog id="demo-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-shell">
+      <form method="dialog" class="dialog-close">
+        <button class="icon-button" aria-label="閉じる">×</button>
+      </form>
+      <div id="dialog-content"></div>
+    </div>
+  </dialog>
+<script type="module">import { mountAutoSiteWidget } from "/_sites/dispatch-assets/sites-widget.js";mountAutoSiteWidget({"kind":"auto","toolbarOrigin":null,"viewerRemixEnabled":false,"invitationBanner":true,"mobileEnabled":false,"environment":"production","chatgptOrigin":"https://chatgpt.com","locale":"ja-JP","accountId":"personal","projectId":"appgprj_6af41451070081918fb68f4816224e65","projectTitle":"京の空き家つなぎ"});</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a58cb81a2c30962f',t:'MTc5NDM5NDA0OQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a58cb81a2c30962f',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
